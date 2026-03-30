@@ -2,7 +2,7 @@
 
 PACKAGE="git"
 
-if dpkg -l | grep -q $PACKAGE; then
+if rpm -q | grep -q $PACKAGE; then
   echo "$PACKAGE is installed"
   dpkg -s $PACKAGE | grep -E 'Version|Description|Maintainer'
 else
@@ -11,5 +11,6 @@ fi
 
 case $PACKAGE in
   git) echo "Git: A distributed version control system used worldwide" ;;
+  mysql) echo "MySQL: Open source at the heart of millions of apps";;
   *) echo "Unknown package" ;;
 esac
