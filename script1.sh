@@ -1,14 +1,17 @@
 #!/bin/bash
-
 STUDENT_NAME="Prakhar"
-SOFTWARE="Git"
-
-echo "===== Open Source Audit ====="
-echo "Name: $STUDENT_NAME"
-echo "Software: $SOFTWARE"
-
-echo "Kernel: $(uname -r)"
-echo "User: $(whoami)"
-echo "Uptime: $(uptime -p)"
+SOFTWARE_CHOICE="Git" # Fill in your chosen software
+# --- System info ---
+KERNEL=$(uname -r)
+USER_NAME=$(whoami)
+UPTIME=$(uptime -p)
+# --- Display ---
+echo "================================"
+echo " Open Source Audit — $STUDENT_NAME"
+echo "================================"
+echo "Kernel : $KERNEL"
+echo "User : $USER_NAME"
+echo "Uptime : $UPTIME"
 echo "Date: $(date)"
 echo "Distro: $(lsb_release -d | cut -f2)"
+# TODO: Add distro name, date, and license message
