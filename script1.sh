@@ -7,7 +7,7 @@ USER_NAME=$(whoami)
 UPTIME=$(uptime -p)
 # --- Display ---
 echo "================================"
-echo " Open Source Audit — $STUDENT_NAME"
+echo " Open Source Audit — $Prakhar_UPADHYAY"
 echo "================================"
 echo "Kernel : $KERNEL"
 echo "User : $USER_NAME"
