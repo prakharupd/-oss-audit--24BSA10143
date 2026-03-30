@@ -1,16 +1,17 @@
 #!/bin/bash
-
-PACKAGE="git"
-
-if rpm -q | grep -q $PACKAGE; then
-  echo "$PACKAGE is installed"
-  dpkg -s $PACKAGE | grep -E 'Version|Description|Maintainer'
+PACKAGE="git" 
+if rpm -q $PACKAGE &>/dev/null; then
+    echo "$PACKAGE is installed."
+    rpm -qi $PACKAGE | grep -E 'Version|License|Summary'
 else
-  echo "$PACKAGE is not installed"
+    echo "$PACKAGE is NOT installed."
 fi
 
 case $PACKAGE in
-  git) echo "Git: A distributed version control system used worldwide" ;;
-  mysql) echo "MySQL: Open source at the heart of millions of apps";;
-  *) echo "Unknown package" ;;
+    httpd) 
+        echo "Apache: the web server that built the open internet" ;;
+    git) 
+        echo "Git: everything is local, distributed versioning at its finest" ;;
+    *) 
+        echo "Unknown package: No philosophy note available for $PACKAGE" ;;
 esac
