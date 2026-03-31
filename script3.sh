@@ -5,9 +5,7 @@ echo "Directory Audit Report"
 echo "----------------------"
 for DIR in "${DIRS[@]}"; do
     if [ -d "$DIR" ]; then
-        # Extracts: permissions ($1), owner ($3), and group ($4)
         PERMS=$(ls -ld "$DIR" | awk '{print $1, $3, $4}')
-        # Gets human-readable size, suppressing permission denied errors
         SIZE=$(du -sh "$DIR" 2>/dev/null | cut -f1)
         
         echo "$DIR => Permissions: $PERMS | Size: ${SIZE:-0}"
